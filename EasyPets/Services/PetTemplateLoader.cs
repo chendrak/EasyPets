@@ -90,22 +90,21 @@ public static class PetTemplateLoader
             {
                 var petSO = PetAPI.AddCustomPet(
                     petName: template.Name,
-                    type: typeof(CustomPet),
+                    type: typeof(PetDataProxy),
                     animations: new PetAnimations
                     {
                         Icon = icon,
                         IdleAnimation = idleAnimationResult.Data,
                         RunAnimation = runAnimationResult.Data
                     },
-                    ERequiredPetDLC.Dog
+                    ERequiredPetDLC.Any
                 );
                 
                 petSO.Unlocked = true;
                 petSO.PetScale = new Vector2(template.SizeScale, template.SizeScale);
 
-                var petData = petSO.GetPetData();
-                (petData as CustomPet)?.InitializeData(petSO.name, nameLocalizationResult.Data, descLocalizationResult.Data);
-
+                var petDataHolder = new PetDataHolder(template.Name!, nameLocalizationResult.Data, descLocalizationResult.Data, new List<PetBehaviour>());
+                PetDataRepository.RegisterPetData(template.Name!, petDataHolder);
             }
             catch (Exception ex)
             {

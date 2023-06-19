@@ -13,7 +13,7 @@ namespace EasyPets.EasyPets.Services
             List<JsonConverter> converters = new();
 
             converters.Add(new StringEnumConverter());
-
+            
             settings = new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore,

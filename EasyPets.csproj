@@ -23,16 +23,20 @@
     <Reference Include="UnityEngine.CoreModule">
         <HintPath>D:/Games/steamapps/common/Rogue Genesia/Modded/Rogue Genesia_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+<!--    <Reference Include="NewtonSoft.Json">-->
+<!--        <HintPath>D:/Games/steamapps/common/Rogue Genesia/Modded/Rogue Genesia_Data\Managed\NewtonSoft.Json.dll</HintPath>-->
+<!--    </Reference>-->
 </ItemGroup>
 
 <ItemGroup>
-  <Folder Include="EasyPets\Behaviors\" />
+  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 </ItemGroup>
 
     <Target Name="PostPublishCleanup" AfterTargets="Publish">
         <ItemGroup>
             <!-- These are files that are unnecessary for the game, or are just not needed -->
-            <FilesToDelete Include="$(PublishDir)*.dll" Exclude="$(PublishDir)$(TargetName)*.dll" />
+<!--            <FilesToDelete Include="$(PublishDir)*.dll" Exclude="$(PublishDir)$(TargetName)*.dll;$(PublishDir)NewtonSoft.Json.dll;" />-->
+            <FilesToDelete Include="$(PublishDir)*.dll" Exclude="$(PublishDir)$(TargetName)*.dll;" />
             <!-- This is skipped in debug configuration, to make debugging plugins easier -->
             <FilesToDelete Include="$(PublishDir)*.pdb" Condition="'$(Configuration)' == 'Release'" />
             <FilesToDelete Include="$(PublishDir)*.deps.json" />
@@ -42,8 +46,4 @@
         <Delete Files="@(FilesToDelete)" />
         <RemoveDir Directories="@(DirectoriesToDelete)" />
     </Target>
-    
-<ItemGroup>
-  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-</ItemGroup>
 </Project>

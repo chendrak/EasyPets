@@ -1,42 +1,38 @@
 using System.Collections.Generic;
 using EasyPets.EasyPets.Logging;
+using EasyPets.EasyPets.Services;
 using RogueGenesia.Data;
 
 namespace EasyPets.EasyPets
 {
-    public class CustomPet : PetData
+    public class PetDataProxy : PetData
     {
-        private string name;
+        private string name => linkedScriptableObject.name;
+
+        private PetDataHolder dataHolder => PetDataRepository.GetPetDataHolder(name);
+        
         private LocalizationDataList nameLocalization;
         private LocalizationDataList descLocalization;
         
-        public CustomPet()
+        public PetDataProxy()
         {
             Log.Debug("CustomPet()");
         }
 
-        public void InitializeData(string name, LocalizationDataList nameLocalization,
-            LocalizationDataList descLocalization)
-        {
-            this.name = name;
-            this.nameLocalization = nameLocalization;
-            this.descLocalization = descLocalization;
-        }
-        
         public override string GetName()
         {
-            return nameLocalization.GetLocalized();
+            return dataHolder.nameLocalization.GetLocalized();
         }
 
         public override string GetDescription()
         {
-            return descLocalization.GetLocalized();
+            return dataHolder.descriptionLocalization.GetLocalized();
         }
 
         public override List<PetBehaviour> GetPetBehaviours()
         {
             Log.Debug("CustomPet.GetPetBehaviours()");
-            return base.GetPetBehaviours();
+            return dataHolder.behaviours;
         }
     }
-} 
+}
