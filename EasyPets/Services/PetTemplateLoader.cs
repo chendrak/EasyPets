@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Timers;
-using EasyPets.EasyPets.Logging;
-using EasyPets.EasyPets.Templates;
+using EasyPets.EasyPets;
+using EasyPets.Logging;
+using EasyPets.Templates;
 using ModGenesia;
 using RogueGenesia.Data;
 using UnityEngine;
 
-namespace EasyPets.EasyPets.Services;
+namespace EasyPets.Services;
 
 public static class PetTemplateLoader
 {
@@ -49,7 +50,7 @@ public static class PetTemplateLoader
 
         Log.Info($"Loaded {templateFile.Pets.Count} pet templates");
 
-        var modSource = templateFile.ModSource ?? EasyPets.MOD_NAME;
+        var modSource = templateFile.ModSource ?? EasyPetsMod.MOD_NAME;
         foreach (var template in templateFile.Pets)
         {
             Log.Debug($"Attempting to add {template.Name}");

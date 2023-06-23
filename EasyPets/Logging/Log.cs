@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace EasyPets.EasyPets.Logging;
+namespace EasyPets.Logging;
 
 using SLog = UnityEngine.Debug;
 

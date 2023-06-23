@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace EasyPets.EasyPets.Services;
+namespace EasyPets.Services;
 
 public static class PetDataRepository
 {

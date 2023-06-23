@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace EasyPets.EasyPets.Services
+namespace EasyPets.Services
 {
     public static class JsonDeserializer
     {

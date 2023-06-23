@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using EasyPets.EasyPets;
 using RogueGenesia.Data;
 
-namespace EasyPets.EasyPets.Templates
+namespace EasyPets.Templates
 {
     public class PetTemplate
     {

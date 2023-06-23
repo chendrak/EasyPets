@@ -1,10 +1,10 @@
-using EasyPets.EasyPets.Buffs;
-using EasyPets.EasyPets.Logging;
+using EasyPets.Buffs;
+using EasyPets.Logging;
 using ModGenesia;
 using RogueGenesia.Actors.Survival;
 using RogueGenesia.Data;
 
-namespace EasyPets.EasyPets.Behaviors;
+namespace EasyPets.Behaviors;
 
 public class MidasBehavior : PetBehaviour
 {

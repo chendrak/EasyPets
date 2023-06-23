@@ -3,7 +3,7 @@ using RogueGenesia.Actors.Survival;
 using RogueGenesia.Data;
 using RogueGenesia.GameManager;
 
-namespace EasyPets.EasyPets.Buffs;
+namespace EasyPets.Buffs;
 
 public class LittleMidasBuff : Buff
 {

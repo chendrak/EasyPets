@@ -1,0 +1,16 @@
+<Project>
+    <PropertyGroup>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+        </RestoreAdditionalProjectSources>
+        <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+        <BaseGameDirectory>D:\Games\steamapps\common\Rogue Genesia\Modded\Rogue Genesia_Data\Managed</BaseGameDirectory>
+    </PropertyGroup>
+    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+<!--        <BaseGameDirectory>/Users/chendrak/games/roguegenesia/Modded/Rogue Genesia_Data/Managed</BaseGameDirectory>-->
+        <BaseGameDirectory>/Volumes/[C] Windows 11/Program Files (x86)/Steam/steamapps/common/Rogue Genesia/Modded/Rogue Genesia_Data/Managed</BaseGameDirectory>
+    </PropertyGroup>
+</Project>

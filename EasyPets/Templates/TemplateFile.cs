@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace EasyPets.EasyPets.Templates;
+namespace EasyPets.Templates;
 
 public class TemplateFile
 {

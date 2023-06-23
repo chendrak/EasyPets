@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using RogueGenesia.Data;
 
-namespace EasyPets.EasyPets.Services;
+namespace EasyPets.Services;
 
 public class PetDataHolder
 {

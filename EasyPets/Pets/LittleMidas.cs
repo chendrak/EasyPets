@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using EasyPets.EasyPets.Behaviors;
+using EasyPets.Behaviors;
 using RogueGenesia.Data;
 
-namespace EasyPets.EasyPets.Pets;
+namespace EasyPets.Pets;
 
 public class LittleMidas : PetData
 {
@@ -16,7 +16,8 @@ public class LittleMidas : PetData
         {
             new IdlePetBehaviour(),
             new MoveToADifferentPositionPetBehaviour(),
-            new MidasBehavior()
+            new MidasBehavior(),
+            new SpewGoldBehavior(),
         };
     }
 }

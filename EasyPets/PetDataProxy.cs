@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using EasyPets.EasyPets.Logging;
-using EasyPets.EasyPets.Services;
+using EasyPets.Logging;
+using EasyPets.Services;
 using RogueGenesia.Data;
 
 namespace EasyPets.EasyPets

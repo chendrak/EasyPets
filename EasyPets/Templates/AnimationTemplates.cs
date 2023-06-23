@@ -1,8 +1,9 @@
+using EasyPets.EasyPets;
 using RogueGenesia.Data;
 using UnityEngine;
 using Paths = System.IO.Path;
 
-namespace EasyPets.EasyPets.Templates
+namespace EasyPets.Templates
 {
     public class AnimationTemplate
     {
